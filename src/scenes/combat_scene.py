@@ -118,6 +118,14 @@ class CombatScene(BaseScene):
             self.skill_button.handle_event(event)
             self.summon_button.handle_event(event)
 
+        # 处理用户自定义事件
+        if event.type == pygame.USEREVENT:
+            if hasattr(event, 'dict') and 'action' in event.dict:
+                if event.dict['action'] == 'game_over':
+                    self.scene_manager.change_state(GameState.GAME_OVER)
+                elif event.dict['action'] == 'back_to_narrative':
+                    self.scene_manager.change_state(GameState.NARRATIVE)
+
     def update(self):
         """更新场景状态"""
         if not self.battle_active:
