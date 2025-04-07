@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奇幻小说TRPG游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div id="game-container">
+        <!-- 主菜单区域 -->
+        <div id="main-menu-area">
+            <h1 class="game-title">奇幻小说TRPG游戏</h1>
+            <div class="menu-buttons">
+                <button id="start-button" class="menu-button">开始游戏</button>
+                <button id="load-button" class="menu-button">读取存档</button>
+                <button id="quit-button" class="menu-button">退出游戏</button>
+            </div>
+        </div>
+
+        <!-- 叙事区域 -->
+        <div id="narrative-area" class="hidden">
+            <div id="background"></div>
+            <div id="character-portrait"></div>
+            <div id="text-box"></div>
+            <div id="choices-area"></div>
+        </div>
+
+        <!-- 战斗区域 -->
+        <div id="combat-area" class="hidden">
+            <div id="combat-background"></div>
+            <div id="combat-characters">
+                <div id="player-character" class="character">
+                    <div class="character-name">玩家</div>
+                    <div class="character-portrait player-portrait"></div>
+                    <div class="hp-bar-container">
+                        <div class="hp-bar-label">HP:</div>
+                        <div class="hp-bar">
+                            <div class="hp-bar-fill"></div>
+                        </div>
+                        <div class="hp-bar-text">100/100</div>
+                    </div>
+                    <div class="mp-bar-container">
+                        <div class="mp-bar-label">MP:</div>
+                        <div class="mp-bar">
+                            <div class="mp-bar-fill"></div>
+                        </div>
+                        <div class="mp-bar-text">50/50</div>
+                    </div>
+                </div>
+                <div id="enemy-character" class="character">
+                    <div class="character-name">敌人</div>
+                    <div class="character-portrait enemy-portrait"></div>
+                    <div class="hp-bar-container">
+                        <div class="hp-bar-label">HP:</div>
+                        <div class="hp-bar">
+                            <div class="hp-bar-fill"></div>
+                        </div>
+                        <div class="hp-bar-text">80/80</div>
+                    </div>
+                </div>
+                <div id="ally-character" class="character hidden">
+                    <div class="character-name">盟友</div>
+                    <div class="character-portrait ally-portrait"></div>
+                    <div class="hp-bar-container">
+                        <div class="hp-bar-label">HP:</div>
+                        <div class="hp-bar">
+                            <div class="hp-bar-fill"></div>
+                        </div>
+                        <div class="hp-bar-text">60/60</div>
+                    </div>
+                </div>
+            </div>
+            <div id="battle-log-container">
+                <div class="battle-log-title">战斗日志</div>
+                <div id="battle-log"></div>
+            </div>
+            <div id="skill-bar">
+                <button id="skill-button" class="combat-button">火球术 (MP: 10)</button>
+                <button id="summon-button" class="combat-button">召唤盟友 (MP: 20)</button>
+            </div>
+        </div>
+
+        <!-- 游戏结束区域 -->
+        <div id="game-over-area" class="hidden">
+            <h1 class="game-over-title">游戏结束</h1>
+            <div class="menu-buttons">
+                <button id="restart-button" class="menu-button">重新开始</button>
+                <button id="quit-game-button" class="menu-button">退出游戏</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
